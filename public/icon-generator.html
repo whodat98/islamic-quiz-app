@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Icon Generator - Islamisches Quiz</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    h1 {
+      color: #10b981;
+      margin-bottom: 10px;
+      font-size: 2.5rem;
+      text-align: center;
+    }
+    .subtitle {
+      text-align: center;
+      color: #666;
+      margin-bottom: 30px;
+      font-size: 1.1rem;
+    }
+    .controls {
+      background: #f9fafb;
+      padding: 30px;
+      border-radius: 15px;
+      margin-bottom: 30px;
+    }
+    .control-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #374151;
+    }
+    input[type="text"], input[type="color"], select {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #e5e7eb;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: border-color 0.3s;
+    }
+    input:focus, select:focus {
+      outline: none;
+      border-color: #10b981;
+    }
+    .color-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+    .btn {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      color: white;
+      padding: 16px 32px;
+      border: none;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      width: 100%;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+    }
+    .btn:active {
+      transform: translateY(0);
+    }
+    .btn-secondary {
+      background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+      margin-top: 10px;
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    }
+    #preview {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+    .icon-container {
+      text-align: center;
+      padding: 20px;
+      background: #f9fafb;
+      border-radius: 15px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .icon-container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    .icon-container img {
+      width: 120px;
+      height: 120px;
+      border: 3px solid #e5e7eb;
+      border-radius: 20px;
+      display: block;
+      margin: 0 auto 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .icon-label {
+      color: #6b7280;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .download-btn {
+      background: #10b981;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    .download-btn:hover {
+      background: #059669;
+    }
+    .success-message {
+      background: #d1fae5;
+      color: #065f46;
+      padding: 15px 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      display: none;
+      align-items: center;
+      gap: 10px;
+    }
+    .success-message.show {
+      display: flex;
+    }
+    .template-selector {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+    .template-option {
+      padding: 15px;
+      border: 2px solid #e5e7eb;
+      border-radius: 10px;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.3s;
+    }
+    .template-option:hover {
+      border-color: #10b981;
+      background: #f0fdf4;
+    }
+    .template-option.active {
+      border-color: #10b981;
+      background: #d1fae5;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🕌 Professional Icon Generator</h1>
+    <p class="subtitle">Erstelle professionelle App-Icons für deine PWA</p>
+    
+    <div class="success-message" id="successMessage">
+      <span style="font-size: 24px;">✅</span>
+      <span>Icons erfolgreich generiert! Lade sie einzeln herunter oder nutze "Alle herunterladen"</span>
+    </div>
+
+    <div class="controls">
+      <div class="control-group">
+        <label>Design-Vorlage wählen:</label>
+        <div class="template-selector">
+          <div class="template-option active" onclick="selectTemplate('modern')">
+            <div style="font-size: 24px; margin-bottom: 5px;">🎨</div>
+            <div style="font-weight: 600;">Modern</div>
+          </div>
+          <div class="template-option" onclick="selectTemplate('classic')">
+            <div style="font-size: 24px; margin-bottom: 5px;">🕌</div>
+            <div style="font-weight: 600;">Klassisch</div>
+          </div>
+          <div class="template-option" onclick="selectTemplate('minimal')">
+            <div style="font-size: 24px; margin-bottom: 5px;">⭐</div>
+            <div style="font-weight: 600;">Minimal</div>
+          </div>
+          <div class="template-option" onclick="selectTemplate('gradient')">
+            <div style="font-size: 24px; margin-bottom: 5px;">🌈</div>
+            <div style="font-weight: 600;">Gradient</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label>App-Text:</label>
+        <input type="text" id="appText" value="QUIZ" placeholder="Z.B. QUIZ oder Islam Quiz">
+      </div>
+
+      <div class="color-group">
+        <div class="control-group">
+          <label>Primärfarbe:</label>
+          <input type="color" id="primaryColor" value="#10b981">
+        </div>
+        <div class="control-group">
+          <label>Sekundärfarbe:</label>
+          <input type="color" id="secondaryColor" value="#059669">
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label>Symbol-Style:</label>
+        <select id="symbolStyle">
+          <option value="crescent-star">Halbmond & Stern (Klassisch)</option>
+          <option value="book">Buch-Symbol</option>
+          <option value="mosque">Moschee</option>
+          <option value="calligraphy">Kalligraphie-Style</option>
+        </select>
+      </div>
+
+      <button class="btn" onclick="generateIcons()">
+        🎨 Icons generieren
+      </button>
+      
+      <button class="btn btn-secondary" onclick="downloadAll()" id="downloadAllBtn" style="display: none;">
+        📥 Alle Icons als ZIP herunterladen
+      </button>
+    </div>
+
+    <div id="preview"></div>
+  </div>
+
+  <script>
+    let currentTemplate = 'modern';
+    let generatedIcons = [];
+
+    function selectTemplate(template) {
+      currentTemplate = template;
+      document.querySelectorAll('.template-option').forEach(el => {
+        el.classList.remove('active');
+      });
+      event.target.closest('.template-option').classList.add('active');
+    }
+
+    function generateIcons() {
+      const sizes = [72, 96, 128, 144, 152, 192, 384, 512];
+      const preview = document.getElementById('preview');
+      const appText = document.getElementById('appText').value || 'QUIZ';
+      const primaryColor = document.getElementById('primaryColor').value;
+      const secondaryColor = document.getElementById('secondaryColor').value;
+      const symbolStyle = document.getElementById('symbolStyle').value;
+      
+      preview.innerHTML = '';
+      generatedIcons = [];
+      
+      sizes.forEach(size => {
+        const canvas = document.createElement('canvas');
+        canvas.width = size;
+        canvas.height = size;
+        const ctx = canvas.getContext('2d');
+        
+        // Draw based on template
+        switch(currentTemplate) {
+          case 'modern':
+            drawModernIcon(ctx, size, primaryColor, secondaryColor, appText, symbolStyle);
+            break;
+          case 'classic':
+            drawClassicIcon(ctx, size, primaryColor, secondaryColor, appText, symbolStyle);
+            break;
+          case 'minimal':
+            drawMinimalIcon(ctx, size, primaryColor, secondaryColor, appText, symbolStyle);
+            break;
+          case 'gradient':
+            drawGradientIcon(ctx, size, primaryColor, secondaryColor, appText, symbolStyle);
+            break;
+        }
+        
+        // Store for download
+        const dataUrl = canvas.toDataURL('image/png');
+        generatedIcons.push({
+          size: size,
+          dataUrl: dataUrl,
+          filename: `icon-${size}x${size}.png`
+        });
+        
+        // Create preview
+        const container = document.createElement('div');
+        container.className = 'icon-container';
+        
+        const img = document.createElement('img');
+        img.src = dataUrl;
+        
+        const label = document.createElement('div');
+        label.className = 'icon-label';
+        label.textContent = `${size}×${size}px`;
+        
+        const downloadBtn = document.createElement('button');
+        downloadBtn.className = 'download-btn';
+        downloadBtn.textContent = '📥 Download';
+        downloadBtn.onclick = () => downloadIcon(dataUrl, `icon-${size}x${size}.png`);
+        
+        container.appendChild(img);
+        container.appendChild(label);
+        container.appendChild(downloadBtn);
+        preview.appendChild(container);
+      });
+      
+      // Show success message
+      document.getElementById('successMessage').classList.add('show');
+      document.getElementById('downloadAllBtn').style.display = 'block';
+      
+      // Hide success message after 5 seconds
+      setTimeout(() => {
+        document.getElementById('successMessage').classList.remove('show');
+      }, 5000);
+    }
+
+    function drawModernIcon(ctx, size, primary, secondary, text, symbolStyle) {
+      // Rounded square background with gradient
+      const gradient = ctx.createLinearGradient(0, 0, size, size);
+      gradient.addColorStop(0, primary);
+      gradient.addColorStop(1, secondary);
+      
+      ctx.fillStyle = gradient;
+      roundRect(ctx, 0, 0, size, size, size * 0.18);
+      ctx.fill();
+      
+      // Draw symbol
+      drawSymbol(ctx, size, 'white', symbolStyle, 0.3);
+      
+      // Modern text with shadow
+      ctx.fillStyle = 'white';
+      ctx.font = `bold ${size * 0.15}px "Segoe UI", Arial, sans-serif`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.shadowColor = 'rgba(0,0,0,0.3)';
+      ctx.shadowBlur = size * 0.02;
+      ctx.fillText(text, size / 2, size * 0.8);
+    }
+
+    function drawClassicIcon(ctx, size, primary, secondary, text, symbolStyle) {
+      // Solid background
+      ctx.fillStyle = primary;
+      ctx.fillRect(0, 0, size, size);
+      
+      // Border decoration
+      ctx.strokeStyle = secondary;
+      ctx.lineWidth = size * 0.04;
+      ctx.strokeRect(size * 0.05, size * 0.05, size * 0.9, size * 0.9);
+      
+      // Symbol
+      drawSymbol(ctx, size, 'white', symbolStyle, 0.35);
+      
+      // Classic text
+      ctx.fillStyle = 'white';
+      ctx.font = `bold ${size * 0.12}px Georgia, serif`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(text, size / 2, size * 0.85);
+    }
+
+    function drawMinimalIcon(ctx, size, primary, secondary, text, symbolStyle) {
+      // White background
+      ctx.fillStyle = 'white';
+      ctx.fillRect(0, 0, size, size);
+      
+      // Colored symbol
+      drawSymbol(ctx, size, primary, symbolStyle, 0.4);
+      
+      // Minimal text
+      ctx.fillStyle = primary;
+      ctx.font = `600 ${size * 0.1}px "Segoe UI", sans-serif`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(text, size / 2, size * 0.85);
+    }
+
+    function drawGradientIcon(ctx, size, primary, secondary, text, symbolStyle) {
+      // Radial gradient background
+      const gradient = ctx.createRadialGradient(size/2, size/2, 0, size/2, size/2, size);
+      gradient.addColorStop(0, primary);
+      gradient.addColorStop(1, secondary);
+      
+      ctx.fillStyle = gradient;
+      roundRect(ctx, 0, 0, size, size, size * 0.2);
+      ctx.fill();
+      
+      // Symbol with glow
+      ctx.shadowColor = 'rgba(255,255,255,0.5)';
+      ctx.shadowBlur = size * 0.05;
+      drawSymbol(ctx, size, 'white', symbolStyle, 0.32);
+      ctx.shadowBlur = 0;
+      
+      // Glowing text
+      ctx.fillStyle = 'white';
+      ctx.font = `bold ${size * 0.14}px "Segoe UI", Arial, sans-serif`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.shadowColor = 'rgba(255,255,255,0.8)';
+      ctx.shadowBlur = size * 0.03;
+      ctx.fillText(text, size / 2, size * 0.82);
+    }
+
+    function drawSymbol(ctx, size, color, style, scale) {
+      ctx.fillStyle = color;
+      const centerY = size * 0.4;
+      
+      switch(style) {
+        case 'crescent-star':
+          // Crescent moon
+          const moonX = size * 0.38;
+          const moonRadius = size * scale * 0.6;
+          ctx.beginPath();
+          ctx.arc(moonX, centerY, moonRadius, 0, 2 * Math.PI);
+          ctx.fill();
+          ctx.fillStyle = ctx.fillStyle === 'white' ? 'rgba(16, 185, 129, 0.9)' : 'rgba(255, 255, 255, 0.9)';
+          ctx.beginPath();
+          ctx.arc(moonX + moonRadius * 0.35, centerY, moonRadius * 0.75, 0, 2 * Math.PI);
+          ctx.fill();
+          
+          // Star
+          ctx.fillStyle = color;
+          drawStar(ctx, size * 0.65, centerY, 5, size * scale * 0.45, size * scale * 0.22);
+          break;
+          
+        case 'book':
+          // Open book
+          const bookW = size * scale * 1.2;
+          const bookH = size * scale * 0.9;
+          const bookX = (size - bookW) / 2;
+          const bookY = centerY - bookH / 2;
+          
+          // Left page
+          ctx.fillRect(bookX, bookY, bookW/2 - 2, bookH);
+          // Right page
+          ctx.fillRect(bookX + bookW/2 + 2, bookY, bookW/2 - 2, bookH);
+          // Spine
+          ctx.fillRect(bookX + bookW/2 - 1, bookY, 2, bookH);
+          break;
+          
+        case 'mosque':
+          // Simplified mosque dome
+          const domeR = size * scale * 0.6;
+          ctx.beginPath();
+          ctx.arc(size/2, centerY + domeR * 0.3, domeR, Math.PI, 0);
+          ctx.fill();
+          // Minaret
+          ctx.fillRect(size/2 - size * 0.03, centerY - domeR * 0.5, size * 0.06, domeR * 1.5);
+          break;
+          
+        case 'calligraphy':
+          // Arabic-style decorative curves
+          ctx.lineWidth = size * 0.03;
+          ctx.strokeStyle = color;
+          ctx.beginPath();
+          ctx.moveTo(size * 0.3, centerY);
+          ctx.bezierCurveTo(size * 0.35, centerY - size * scale * 0.4, 
+                           size * 0.65, centerY - size * scale * 0.4, 
+                           size * 0.7, centerY);
+          ctx.stroke();
+          ctx.beginPath();
+          ctx.moveTo(size * 0.35, centerY + size * 0.05);
+          ctx.bezierCurveTo(size * 0.4, centerY + size * scale * 0.3, 
+                           size * 0.6, centerY + size * scale * 0.3, 
+                           size * 0.65, centerY + size * 0.05);
+          ctx.stroke();
+          break;
+      }
+    }
+
+    function drawStar(ctx, cx, cy, spikes, outerRadius, innerRadius) {
+      let rot = Math.PI / 2 * 3;
+      const step = Math.PI / spikes;
+      
+      ctx.beginPath();
+      ctx.moveTo(cx, cy - outerRadius);
+      
+      for (let i = 0; i < spikes; i++) {
+        let x = cx + Math.cos(rot) * outerRadius;
+        let y = cy + Math.sin(rot) * outerRadius;
+        ctx.lineTo(x, y);
+        rot += step;
+        
+        x = cx + Math.cos(rot) * innerRadius;
+        y = cy + Math.sin(rot) * innerRadius;
+        ctx.lineTo(x, y);
+        rot += step;
+      }
+      
+      ctx.closePath();
+      ctx.fill();
+    }
+
+    function roundRect(ctx, x, y, width, height, radius) {
+      ctx.beginPath();
+      ctx.moveTo(x + radius, y);
+      ctx.lineTo(x + width - radius, y);
+      ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+      ctx.lineTo(x + width, y + height - radius);
+      ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+      ctx.lineTo(x + radius, y + height);
+      ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+      ctx.lineTo(x, y + radius);
+      ctx.quadraticCurveTo(x, y, x + radius, y);
+      ctx.closePath();
+    }
+
+    function downloadIcon(dataUrl, filename) {
+      const link = document.createElement('a');
+      link.download = filename;
+      link.href = dataUrl;
+      link.click();
+    }
+
+    function downloadAll() {
+      // Download all icons one by one
+      generatedIcons.forEach((icon, index) => {
+        setTimeout(() => {
+          downloadIcon(icon.dataUrl, icon.filename);
+        }, index * 200); // Small delay between downloads
+      });
+      
+      alert(`✅ ${generatedIcons.length} Icons werden heruntergeladen!\n\nSpeichere sie alle im /public/ Ordner deiner App.`);
+    }
+
+    // Auto-generate on load
+    window.onload = () => generateIcons();
+  </script>
+</body>
+</html>

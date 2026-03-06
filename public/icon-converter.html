@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Icon Converter - Islamic Quiz</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 800px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            color: #10b981;
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+        
+        .subtitle {
+            color: #6b7280;
+            margin-bottom: 30px;
+        }
+        
+        .icon-preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .icon-box {
+            text-align: center;
+            padding: 20px;
+            background: #f3f4f6;
+            border-radius: 12px;
+        }
+        
+        .icon-box img {
+            width: 100%;
+            max-width: 150px;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+        
+        .icon-box h3 {
+            font-size: 0.9em;
+            color: #374151;
+            margin-bottom: 10px;
+        }
+        
+        button {
+            background: #10b981;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            width: 100%;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        button:hover {
+            background: #059669;
+        }
+        
+        .success {
+            background: #d1fae5;
+            color: #065f46;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            display: none;
+        }
+        
+        .instructions {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .instructions h3 {
+            color: #92400e;
+            margin-bottom: 10px;
+        }
+        
+        .instructions ol {
+            margin-left: 20px;
+            color: #78350f;
+        }
+        
+        .instructions li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Icon Generator</h1>
+        <p class="subtitle">Erstelle automatisch alle benötigten Icons für den Play Store</p>
+        
+        <div class="instructions">
+            <h3>📋 Anleitung:</h3>
+            <ol>
+                <li>Klicke auf "Alle Icons generieren"</li>
+                <li>Warte 2 Sekunden</li>
+                <li>Klicke auf jeden "Download"-Button</li>
+                <li>Speichere die Icons im <code>/public</code> Ordner</li>
+                <li>Fertig! ✅</li>
+            </ol>
+        </div>
+        
+        <button onclick="generateAllIcons()">🚀 Alle Icons generieren</button>
+        
+        <div id="iconPreview" class="icon-preview"></div>
+        
+        <div id="success" class="success">
+            ✅ Alle Icons erfolgreich generiert! Klicke auf die Download-Buttons unten.
+        </div>
+    </div>
+    
+    <script>
+        const svgCode = `<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="90" fill="url(#bgGrad)"/>
+  <g filter="url(#shadow)">
+    <circle cx="179" cy="179" r="61" fill="white"/>
+    <circle cx="203" cy="179" r="49" fill="#10b981"/>
+  </g>
+  <g filter="url(#shadow)">
+    <path d="M 333 179 L 344 209 L 374 209 L 350 227 L 361 257 L 333 239 L 305 257 L 316 227 L 292 209 L 322 209 Z" fill="white"/>
+  </g>
+  <text x="256" y="410" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="white" text-anchor="middle" filter="url(#shadow)">QUIZ</text>
+</svg>`;
+
+        const svgMaskable = `<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <rect width="512" height="512" fill="url(#bgGrad)"/>
+  <g filter="url(#shadow)">
+    <circle cx="211" cy="211" r="51" fill="white"/>
+    <circle cx="231" cy="211" r="41" fill="#10b981"/>
+  </g>
+  <g filter="url(#shadow)">
+    <path d="M 301 211 L 310 235 L 335 235 L 315 250 L 324 274 L 301 259 L 278 274 L 287 250 L 267 235 L 292 235 Z" fill="white"/>
+  </g>
+  <text x="256" y="370" font-family="Arial, sans-serif" font-size="60" font-weight="bold" fill="white" text-anchor="middle" filter="url(#shadow)">QUIZ</text>
+</svg>`;
+
+        function svgToPng(svgString, width, height) {
+            return new Promise((resolve) => {
+                const canvas = document.createElement('canvas');
+                canvas.width = width;
+                canvas.height = height;
+                const ctx = canvas.getContext('2d');
+                
+                const img = new Image();
+                const svgBlob = new Blob([svgString], { type: 'image/svg+xml;charset=utf-8' });
+                const url = URL.createObjectURL(svgBlob);
+                
+                img.onload = function() {
+                    ctx.drawImage(img, 0, 0, width, height);
+                    URL.revokeObjectURL(url);
+                    resolve(canvas.toDataURL('image/png'));
+                };
+                
+                img.src = url;
+            });
+        }
+        
+        async function generateAllIcons() {
+            const button = event.target;
+            button.disabled = true;
+            button.textContent = '⏳ Generiere Icons...';
+            
+            const icons = [
+                { name: 'icon-192.png', svg: svgCode, size: 192 },
+                { name: 'icon-512.png', svg: svgCode, size: 512 },
+                { name: 'icon-maskable-512.png', svg: svgMaskable, size: 512 }
+            ];
+            
+            const preview = document.getElementById('iconPreview');
+            preview.innerHTML = '';
+            
+            for (const icon of icons) {
+                const pngData = await svgToPng(icon.svg, icon.size, icon.size);
+                
+                const box = document.createElement('div');
+                box.className = 'icon-box';
+                
+                const img = document.createElement('img');
+                img.src = pngData;
+                
+                const title = document.createElement('h3');
+                title.textContent = icon.name;
+                
+                const downloadBtn = document.createElement('button');
+                downloadBtn.textContent = '📥 Download';
+                downloadBtn.onclick = () => downloadIcon(pngData, icon.name);
+                
+                box.appendChild(img);
+                box.appendChild(title);
+                box.appendChild(downloadBtn);
+                preview.appendChild(box);
+            }
+            
+            button.textContent = '✅ Icons generiert!';
+            document.getElementById('success').style.display = 'block';
+        }
+        
+        function downloadIcon(dataUrl, filename) {
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = dataUrl;
+            link.click();
+        }
+    </script>
+</body>
+</html>

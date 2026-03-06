@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- PWA Meta Tags -->
+    <meta name="description" content="Teste dein islamisches Wissen mit 200 anspruchsvollen Fragen in 6 Kategorien: Quran, Hadith, Fiqh, Seerah, Geschichte und Aqidah" />
+    <meta name="theme-color" content="#10b981" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Islam Quiz" />
+    
+    <!-- Simple test favicon - green circle with white crescent -->
+    <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAA7AAAAOwBeShxvQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAIHSURBVFiF7ZbPi1JRFMc/5z6dUdMZHSMbLYQWLYL+gDZBELRpE0GbIGjVqkUQ/QEt2rQKWkS0aBG0KAiiRdCiCIIWLYIgCKJFRBFUijqOM+P7dVu4PnVm3ps3o0R94HDuved8Pu/cc+89V1QVxxr/7wDHOkDdAURkSkRWRGRdRBZFpK9TOToCEJEB4BXQBfQCfcANEZnpRA6nKZgG3gKPgC/APnAHmOtEjk4ApoGPwCPLdwC4C0x1IocTgGngA3Df8m0BdwBfJ3I4AUgD74F7lm8TuA10dyKHE4A0sALctXwbwB1DQUV6AeCOa3RpSxZNweKOb921AGKkU5cOlm6lIWEJEJEEcAlYBmLAMnAx5O4FGLsCrAEx4CrwEngMJIF14HzI/dNlAJaATcv3AHgCJIA14FzI/ZPlfq0Cm5bvPvDUULAKnAm5fzJcAJZ15a7luw88MxSsAKdD7p8ICWAJqFi+e8BzQ8EycDLk/vGQAJaAsuW7Czw3FCwBJ0LuHw8BYBEoWr5bwAtDwSIwHnL/WAiABaBg+W4CLw0FC8BY69w/2ibAAjBv+W4ArwwF88BI69w/0gbAPPC35bsOvDYUzAHDrXP/aBsA88Afy3cNeGMomAOGWuf+0RYA5oBfl+8q8NZQMAsMts79ow4A54Efl+8K8M5QMAsM1HP/aCMAc8D3y3cZ+GAomAEG6rl/9D8D/AXouJUxf4HdVgAAAABJRU5ErkJggg==" />
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    
+    <title>🌙 Islamisches Quiz</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/app/App.tsx"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js', { scope: '/' })
+            .then(registration => {
+              console.log('✅ Service Worker registered successfully:', registration.scope);
+            })
+            .catch(error => {
+              console.error('❌ Service Worker registration failed:', error);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>

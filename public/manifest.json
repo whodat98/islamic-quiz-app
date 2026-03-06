@@ -1,0 +1,50 @@
+{
+  "name": "Islamic Quiz - Wissenstest für Muslime",
+  "short_name": "Islamic Quiz",
+  "description": "300 schwere Fragen zu Quran, Hadith, Fiqh, Seerah, islamische Geschichte und Aqidah. Teste und vertiefe dein islamisches Wissen!",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#10b981",
+  "background_color": "#ffffff",
+  "lang": "de",
+  "dir": "ltr",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": ["education", "lifestyle"],
+  "shortcuts": [
+    {
+      "name": "Quiz starten",
+      "short_name": "Quiz",
+      "description": "Starte ein neues Quiz",
+      "url": "/dashboard",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Quizduell",
+      "short_name": "Duell",
+      "description": "Spiele ein Quizduell",
+      "url": "/dashboard",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}

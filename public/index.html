@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🕌 App Icons automatisch generieren</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      max-width: 800px;
+      text-align: center;
+    }
+    h1 { color: #10b981; margin-bottom: 20px; font-size: 2rem; }
+    .status {
+      background: #f0fdf4;
+      border: 2px solid #10b981;
+      padding: 20px;
+      border-radius: 12px;
+      margin: 20px 0;
+    }
+    .btn {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      color: white;
+      padding: 16px 32px;
+      border: none;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      margin: 10px;
+      box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .preview { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 15px; 
+      margin-top: 20px;
+    }
+    .preview img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .icon-label {
+      font-size: 12px;
+      color: #666;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🕌 Islamisches Quiz - Icons</h1>
+    
+    <div class="status" id="status">
+      <h3 style="color: #059669; margin-bottom: 10px;">⏳ Icons werden generiert...</h3>
+      <p>Warte einen Moment, die Icons werden automatisch erstellt.</p>
+    </div>
+
+    <button class="btn" onclick="downloadAllIcons()" id="downloadBtn" style="display: none;">
+      📥 Alle Icons herunterladen
+    </button>
+
+    <button class="btn" onclick="window.location.href='icon-generator.html'">
+      🎨 Erweiterten Generator öffnen
+    </button>
+
+    <div class="preview" id="preview"></div>
+  </div>
+
+  <script>
+    const sizes = [72, 96, 128, 144, 152, 192, 384, 512];
+    const generatedIcons = [];
+
+    function generateIcon(size) {
+      const canvas = document.createElement('canvas');
+      canvas.width = size;
+      canvas.height = size;
+      const ctx = canvas.getContext('2d');
+      
+      // Gradient background
+      const gradient = ctx.createLinearGradient(0, 0, size, size);
+      gradient.addColorStop(0, '#10b981');
+      gradient.addColorStop(1, '#059669');
+      ctx.fillStyle = gradient;
+      
+      // Rounded rectangle
+      const radius = size * 0.18;
+      ctx.beginPath();
+      ctx.moveTo(radius, 0);
+      ctx.lineTo(size - radius, 0);
+      ctx.quadraticCurveTo(size, 0, size, radius);
+      ctx.lineTo(size, size - radius);
+      ctx.quadraticCurveTo(size, size, size - radius, size);
+      ctx.lineTo(radius, size);
+      ctx.quadraticCurveTo(0, size, 0, size - radius);
+      ctx.lineTo(0, radius);
+      ctx.quadraticCurveTo(0, 0, radius, 0);
+      ctx.closePath();
+      ctx.fill();
+      
+      // Crescent moon
+      const moonX = size * 0.35;
+      const moonY = size * 0.35;
+      const moonRadius = size * 0.18;
+      
+      ctx.fillStyle = 'white';
+      ctx.beginPath();
+      ctx.arc(moonX, moonY, moonRadius, 0, 2 * Math.PI);
+      ctx.fill();
+      
+      ctx.fillStyle = '#10b981';
+      ctx.beginPath();
+      ctx.arc(moonX + moonRadius * 0.35, moonY, moonRadius * 0.75, 0, 2 * Math.PI);
+      ctx.fill();
+      
+      // Star
+      ctx.fillStyle = 'white';
+      const starX = size * 0.65;
+      const starY = size * 0.35;
+      const starSize = size * 0.12;
+      drawStar(ctx, starX, starY, 5, starSize, starSize * 0.5);
+      
+      // Text "QUIZ"
+      ctx.fillStyle = 'white';
+      ctx.font = `bold ${size * 0.15}px Arial, sans-serif`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.shadowColor = 'rgba(0,0,0,0.3)';
+      ctx.shadowBlur = size * 0.02;
+      ctx.fillText('QUIZ', size / 2, size * 0.78);
+      
+      return canvas;
+    }
+
+    function drawStar(ctx, cx, cy, spikes, outerRadius, innerRadius) {
+      let rot = Math.PI / 2 * 3;
+      const step = Math.PI / spikes;
+      
+      ctx.beginPath();
+      ctx.moveTo(cx, cy - outerRadius);
+      
+      for (let i = 0; i < spikes; i++) {
+        let x = cx + Math.cos(rot) * outerRadius;
+        let y = cy + Math.sin(rot) * outerRadius;
+        ctx.lineTo(x, y);
+        rot += step;
+        
+        x = cx + Math.cos(rot) * innerRadius;
+        y = cy + Math.sin(rot) * innerRadius;
+        ctx.lineTo(x, y);
+        rot += step;
+      }
+      
+      ctx.closePath();
+      ctx.fill();
+    }
+
+    function init() {
+      const preview = document.getElementById('preview');
+      
+      sizes.forEach(size => {
+        const canvas = generateIcon(size);
+        const dataUrl = canvas.toDataURL('image/png');
+        
+        generatedIcons.push({
+          size,
+          dataUrl,
+          filename: `icon-${size}x${size}.png`
+        });
+        
+        // Preview
+        const container = document.createElement('div');
+        const img = document.createElement('img');
+        img.src = dataUrl;
+        
+        const label = document.createElement('div');
+        label.className = 'icon-label';
+        label.textContent = `${size}×${size}`;
+        
+        container.appendChild(img);
+        container.appendChild(label);
+        preview.appendChild(container);
+      });
+      
+      // Update status
+      document.getElementById('status').innerHTML = `
+        <h3 style="color: #10b981; margin-bottom: 10px;">✅ Icons erfolgreich generiert!</h3>
+        <p>Lade alle Icons herunter und speichere sie im <strong>/public/</strong> Ordner.</p>
+      `;
+      
+      document.getElementById('downloadBtn').style.display = 'inline-block';
+    }
+
+    function downloadAllIcons() {
+      generatedIcons.forEach((icon, index) => {
+        setTimeout(() => {
+          const link = document.createElement('a');
+          link.download = icon.filename;
+          link.href = icon.dataUrl;
+          link.click();
+        }, index * 300);
+      });
+      
+      alert('✅ ' + generatedIcons.length + ' Icons werden heruntergeladen!\n\nSpeichere sie ALLE im /public/ Ordner deiner App.');
+    }
+
+    // Auto-generate on load
+    window.onload = init;
+  </script>
+</body>
+</html>

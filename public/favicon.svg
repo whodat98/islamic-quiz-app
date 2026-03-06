@@ -1,0 +1,21 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#10b981"/>
+      <stop offset="1" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background with rounded corners -->
+  <rect width="512" height="512" rx="90" fill="url(#bgGradient)"/>
+  
+  <!-- Crescent Moon -->
+  <circle cx="179" cy="179" r="61" fill="white"/>
+  <circle cx="203" cy="179" r="49" fill="#10b981"/>
+  
+  <!-- Star -->
+  <path d="M 333 179 L 344 209 L 374 209 L 350 227 L 361 257 L 333 239 L 305 257 L 316 227 L 292 209 L 322 209 Z" fill="white"/>
+  
+  <!-- Text -->
+  <text x="256" y="410" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="white" text-anchor="middle">QUIZ</text>
+</svg>

@@ -1,0 +1,431 @@
+ Running frontend commit 43c1b3f3f6656c516bec82d03d20612950373562
+vendor-core-ade2edecaf4781c7.min.js.br:54 Statsig is not ready to log exposures, will retry in 1 seconds
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:54
+vendor-core-ade2edecaf4781c7.min.js.br:54 Loaded 32 scripts (5968025b), 32 from cache (5968025b)
+vendor-core-ade2edecaf4781c7.min.js.br:54 [Livegraph] Connected 2026-03-04T12:16:41.438Z.
+vendor-core-ade2edecaf4781c7.min.js.br:54 [import] git: c8e6c45695ccb395f2b769e2855fd4887dfbe427, stamp: 9DB4DCBB85B872DD
+vendor-core-ade2edecaf4781c7.min.js.br:54 Autosave Changes not available or already claimed by another tab undefined
+vendor-core-ade2edecaf4781c7.min.js.br:54 [Fullscreen] Booting... (emscripten version 4.0.21)
+vendor-core-ade2edecaf4781c7.min.js.br:54 [GPU] graphicsAPI:"WebGPU", vendor:"Google Inc. (Apple)" renderer:"ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)" deviceArchitecture:"metal-3" deviceDescription:"" webGPUDevice:"" webGPUVendor:"apple" bindings:"emdawnwebgpu"
+vendor-core-ade2edecaf4781c7.min.js.br:54 [Fullscreen] Ready in 20.6ms
+vendor-core-ade2edecaf4781c7.min.js.br:54 [FullscreenApp] calling setEditorTheme and setting preference light
+vendor-core-ade2edecaf4781c7.min.js.br:54 [MultiplayerSession] connecting to wss://www.figma.com/api/multiplayer/WfR0NQohgjwTXVD67KAhrx?role=editor&tracking_session_id=rDKbqXh0lKriJpei&version=151&recentReload=0&file-load-streaming-compression&user-id=1610951669165160900&client_release=43c1b3f3f6656c516bec82d03d20612950373562
+vendor-core-ade2edecaf4781c7.min.js.br:54 [FullscreenApp] calling setEditorTheme and setting preference light
+vendor-core-ade2edecaf4781c7.min.js.br:54 [MultiplayerSession] Joining file version 106 (initial load)
+vendor-core-ade2edecaf4781c7.min.js.br:54 Migration succeeded: context: fullscreen_migrate_SceneGraphManager, version: 106, duration: 0ms.
+vendor-core-ade2edecaf4781c7.min.js.br:54 [Fullscreen] loadtime=3.40s maxmem=15937636
+vendor-core-ade2edecaf4781c7.min.js.br:54 [devtools] Initialized LS
+vendor-core-ade2edecaf4781c7.min.js.br:54 [devtools] Initialized LS
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 [vite] connecting...
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 [vite] connected.
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 🔍 Überprüfe Session beim App-Start...
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Session gefunden: false
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Session Error: null
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 ❌ Keine Session gefunden - User bleibt null
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 🔐 Starte Login-Vorgang...
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 ✅ Supabase Auth erfolgreich
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28    Session vorhanden: true
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28    Access Token vorhanden: true
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28    Access Token (erste 30 Zeichen): eyJhbGciOiJFUzI1NiIsImtpZCI6Ij...
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 ✅ User und Token im State gesetzt
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 === DEBUG AUTH TEST ===
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Access Token vorhanden: true
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Access Token (erste 30): eyJhbGciOiJFUzI1NiIsImtpZCI6Ij...
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Token Länge: 814
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Decoded JWT: Object
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Current session: Object
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Test-Antwort: Object
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Public Debug: Object
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 [vite] connecting...
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 [vite] connected.
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 🔍 Überprüfe Session beim App-Start...
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Session gefunden: false
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Session Error: null
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 ❌ Keine Session gefunden - User bleibt null
+Islamic-Quiz-App?p=f&t=JuUQbXvbdirp2EiQ-0&preview-route=%2Fpayment:531 Running frontend commit 43c1b3f3f6656c516bec82d03d20612950373562
+vendor-core-ade2edecaf4781c7.min.js.br:54 Statsig is not ready to log exposures, will retry in 1 seconds
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:54
+(anonymous) @ 4016-48895b43bcb5d5a8.min.js.br:1101
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54
+setTimeout
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+logExposureForFeatureGateCheck @ 4016-48895b43bcb5d5a8.min.js.br:1101
+getFeatureGateFromInitialOptions @ 4016-48895b43bcb5d5a8.min.js.br:1101
+getFeatureGate @ 4016-48895b43bcb5d5a8.min.js.br:1101
+getFeatureGate @ 4016-48895b43bcb5d5a8.min.js.br:1431
+932235 @ figma_app-1d6ad1ca44adbcaa.min.js.br:418
+i @ runtime~figma_app-186e2814fa041e8b.min.js.br:3
+801936 @ figma_app-1d6ad1ca44adbcaa.min.js.br:39
+i @ runtime~figma_app-186e2814fa041e8b.min.js.br:3
+781295 @ figma_app-1d6ad1ca44adbcaa.min.js.br:416
+i @ runtime~figma_app-186e2814fa041e8b.min.js.br:3
+593464 @ figma_app-1d6ad1ca44adbcaa.min.js.br:4
+i @ runtime~figma_app-186e2814fa041e8b.min.js.br:3
+816199 @ 4016-48895b43bcb5d5a8.min.js.br:85
+i @ runtime~figma_app-186e2814fa041e8b.min.js.br:3
+881625 @ figma_app-1d6ad1ca44adbcaa.min.js.br:529
+i @ runtime~figma_app-186e2814fa041e8b.min.js.br:3
+28285 @ 6066-c4088d3e95ad7af5.min.js.br:3
+i @ runtime~figma_app-186e2814fa041e8b.min.js.br:3
+344653 @ figma_app-1d6ad1ca44adbcaa.min.js.br:418
+i @ runtime~figma_app-186e2814fa041e8b.min.js.br:3
+912563 @ figma_app-1d6ad1ca44adbcaa.min.js.br:418
+i @ runtime~figma_app-186e2814fa041e8b.min.js.br:3
+941181 @ figma_app-1d6ad1ca44adbcaa.min.js.br:4
+i @ runtime~figma_app-186e2814fa041e8b.min.js.br:3
+577246 @ 5340-37939770a92d139c.min.js.br:3
+i @ runtime~figma_app-186e2814fa041e8b.min.js.br:3
+483051 @ 8222-0204520dc0536e7f.min.js.br:3
+i @ runtime~figma_app-186e2814fa041e8b.min.js.br:3
+948757 @ figma_app-1d6ad1ca44adbcaa.min.js.br:4
+i @ runtime~figma_app-186e2814fa041e8b.min.js.br:3
+(anonymous) @ figma_app-1d6ad1ca44adbcaa.min.js.br:698
+(anonymous) @ runtime~figma_app-186e2814fa041e8b.min.js.br:3
+(anonymous) @ figma_app-1d6ad1ca44adbcaa.min.js.br:698
+r @ runtime~figma_app-186e2814fa041e8b.min.js.br:3
+(anonymous) @ figma_app-1d6ad1ca44adbcaa.min.js.br:3
+vendor-core-ade2edecaf4781c7.min.js.br:54 Loaded 32 scripts (5968025b), 32 from cache (5968025b)
+vendor-core-ade2edecaf4781c7.min.js.br:54 [Livegraph] Connected 2026-03-04T12:21:22.959Z.
+vendor-core-ade2edecaf4781c7.min.js.br:54 [import] git: c8e6c45695ccb395f2b769e2855fd4887dfbe427, stamp: 9DB4DCBB85B872DD
+vendor-core-ade2edecaf4781c7.min.js.br:54 Autosave Changes not available or already claimed by another tab undefined
+vendor-core-ade2edecaf4781c7.min.js.br:54 [Fullscreen] Booting... (emscripten version 4.0.21)
+vendor-core-ade2edecaf4781c7.min.js.br:54 [GPU] graphicsAPI:"WebGPU", vendor:"Google Inc. (Apple)" renderer:"ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)" deviceArchitecture:"metal-3" deviceDescription:"" webGPUDevice:"" webGPUVendor:"apple" bindings:"emdawnwebgpu"
+vendor-core-ade2edecaf4781c7.min.js.br:54 [Fullscreen] Ready in 639.7ms
+vendor-core-ade2edecaf4781c7.min.js.br:54 [FullscreenApp] calling setEditorTheme and setting preference light
+vendor-core-ade2edecaf4781c7.min.js.br:54 [MultiplayerSession] connecting to wss://www.figma.com/api/multiplayer/WfR0NQohgjwTXVD67KAhrx?role=editor&tracking_session_id=LHi7nZiDwC7gXACj&version=151&recentReload=0&file-load-streaming-compression&user-id=1610951669165160900&client_release=43c1b3f3f6656c516bec82d03d20612950373562
+vendor-core-ade2edecaf4781c7.min.js.br:54 [MultiplayerSession] Joining file version 106 (initial load)
+vendor-core-ade2edecaf4781c7.min.js.br:54 [FullscreenApp] calling setEditorTheme and setting preference light
+vendor-core-ade2edecaf4781c7.min.js.br:54 [Fullscreen] loadtime=3.50s maxmem=15845804
+vendor-core-ade2edecaf4781c7.min.js.br:54 [devtools] Initialized LS
+vendor-core-ade2edecaf4781c7.min.js.br:54 [devtools] Initialized LS
+vendor-core-ade2edecaf4781c7.min.js.br:54 [Shadow read] 'rolesReducer.unhandledAction' has discrepancies ⚠️ [{…}]
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 [vite] connecting...
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 [vite] connected.
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 🔍 Überprüfe Session beim App-Start...
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Session gefunden: false
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Session Error: null
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 ❌ Keine Session gefunden - User bleibt null
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 ❌ Kein Access Token vorhanden - Weiterleitung zu Login
+(anonymous) @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28
+r @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:69
+error @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28
+handlePayment @ PaymentPage.tsx:29
+y @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:77
+i @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28
+iG @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:77
+ij @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:77
+iz @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:77
+dP @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:89
+dM @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:89
+dk @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:89
+dG @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:89
+(anonymous) @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:89
+SR @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:89
+iR @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:77
+d$ @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:89
+lO @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:77
+lN @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:77
+lv @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:77
+i @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 🔐 Starte Login-Vorgang...
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 ✅ Supabase Auth erfolgreich
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28    Session vorhanden: true
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28    Access Token vorhanden: true
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28    Access Token (erste 30 Zeichen): eyJhbGciOiJFUzI1NiIsImtpZCI6Ij...
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 ✅ User und Token im State gesetzt
+Islamic-Quiz-App?p=f&t=tC0We9QewjMKyg3T-0&preview-route=%2Fpayment:531 Running frontend commit 43c1b3f3f6656c516bec82d03d20612950373562
+vendor-core-ade2edecaf4781c7.min.js.br:54 Statsig is not ready to log exposures, will retry in 1 seconds
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:54
+(anonymous) @ 4016-48895b43bcb5d5a8.min.js.br:1101
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54
+setTimeout
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+logExposureForFeatureGateCheck @ 4016-48895b43bcb5d5a8.min.js.br:1101
+getFeatureGateFromInitialOptions @ 4016-48895b43bcb5d5a8.min.js.br:1101
+getFeatureGate @ 4016-48895b43bcb5d5a8.min.js.br:1101
+getFeatureGate @ 4016-48895b43bcb5d5a8.min.js.br:1431
+932235 @ figma_app-1d6ad1ca44adbcaa.min.js.br:418
+i @ runtime~figma_app-186e2814fa041e8b.min.js.br:3
+801936 @ figma_app-1d6ad1ca44adbcaa.min.js.br:39
+i @ runtime~figma_app-186e2814fa041e8b.min.js.br:3
+781295 @ figma_app-1d6ad1ca44adbcaa.min.js.br:416
+i @ runtime~figma_app-186e2814fa041e8b.min.js.br:3
+593464 @ figma_app-1d6ad1ca44adbcaa.min.js.br:4
+i @ runtime~figma_app-186e2814fa041e8b.min.js.br:3
+816199 @ 4016-48895b43bcb5d5a8.min.js.br:85
+i @ runtime~figma_app-186e2814fa041e8b.min.js.br:3
+881625 @ figma_app-1d6ad1ca44adbcaa.min.js.br:529
+i @ runtime~figma_app-186e2814fa041e8b.min.js.br:3
+28285 @ 6066-c4088d3e95ad7af5.min.js.br:3
+i @ runtime~figma_app-186e2814fa041e8b.min.js.br:3
+344653 @ figma_app-1d6ad1ca44adbcaa.min.js.br:418
+i @ runtime~figma_app-186e2814fa041e8b.min.js.br:3
+912563 @ figma_app-1d6ad1ca44adbcaa.min.js.br:418
+i @ runtime~figma_app-186e2814fa041e8b.min.js.br:3
+941181 @ figma_app-1d6ad1ca44adbcaa.min.js.br:4
+i @ runtime~figma_app-186e2814fa041e8b.min.js.br:3
+577246 @ 5340-37939770a92d139c.min.js.br:3
+i @ runtime~figma_app-186e2814fa041e8b.min.js.br:3
+483051 @ 8222-0204520dc0536e7f.min.js.br:3
+i @ runtime~figma_app-186e2814fa041e8b.min.js.br:3
+948757 @ figma_app-1d6ad1ca44adbcaa.min.js.br:4
+i @ runtime~figma_app-186e2814fa041e8b.min.js.br:3
+(anonymous) @ figma_app-1d6ad1ca44adbcaa.min.js.br:698
+(anonymous) @ runtime~figma_app-186e2814fa041e8b.min.js.br:3
+(anonymous) @ figma_app-1d6ad1ca44adbcaa.min.js.br:698
+r @ runtime~figma_app-186e2814fa041e8b.min.js.br:3
+(anonymous) @ figma_app-1d6ad1ca44adbcaa.min.js.br:3
+vendor-core-ade2edecaf4781c7.min.js.br:54 Loaded 32 scripts (5968025b), 32 from cache (5968025b)
+vendor-core-ade2edecaf4781c7.min.js.br:54 [Livegraph] Connected 2026-03-04T12:22:29.563Z.
+vendor-core-ade2edecaf4781c7.min.js.br:54 [import] git: c8e6c45695ccb395f2b769e2855fd4887dfbe427, stamp: 9DB4DCBB85B872DD
+vendor-core-ade2edecaf4781c7.min.js.br:54 Autosave Changes not available or already claimed by another tab undefined
+vendor-core-ade2edecaf4781c7.min.js.br:54 [Fullscreen] Booting... (emscripten version 4.0.21)
+vendor-core-ade2edecaf4781c7.min.js.br:54 [GPU] graphicsAPI:"WebGPU", vendor:"Google Inc. (Apple)" renderer:"ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)" deviceArchitecture:"metal-3" deviceDescription:"" webGPUDevice:"" webGPUVendor:"apple" bindings:"emdawnwebgpu"
+vendor-core-ade2edecaf4781c7.min.js.br:54 [Fullscreen] Ready in 706.2ms
+vendor-core-ade2edecaf4781c7.min.js.br:54 [FullscreenApp] calling setEditorTheme and setting preference light
+vendor-core-ade2edecaf4781c7.min.js.br:54 [MultiplayerSession] connecting to wss://www.figma.com/api/multiplayer/WfR0NQohgjwTXVD67KAhrx?role=editor&tracking_session_id=pA2wxddWxq1U9UPw&version=151&recentReload=0&file-load-streaming-compression&user-id=1610951669165160900&client_release=43c1b3f3f6656c516bec82d03d20612950373562
+vendor-core-ade2edecaf4781c7.min.js.br:54 [MultiplayerSession] Joining file version 106 (initial load)
+vendor-core-ade2edecaf4781c7.min.js.br:54 [FullscreenApp] calling setEditorTheme and setting preference light
+vendor-core-ade2edecaf4781c7.min.js.br:54 [devtools] Initialized LS
+vendor-core-ade2edecaf4781c7.min.js.br:54 [Fullscreen] loadtime=3.64s maxmem=15845804
+vendor-core-ade2edecaf4781c7.min.js.br:54 [devtools] Initialized LS
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 [vite] connecting...
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 [vite] connected.
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 🔍 Überprüfe Session beim App-Start...
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Session gefunden: false
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Session Error: null
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 ❌ Keine Session gefunden - User bleibt null
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 ❌ Kein Access Token vorhanden - Weiterleitung zu Login
+(anonymous) @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28
+r @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:69
+error @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28
+handlePayment @ PaymentPage.tsx:29
+y @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:77
+i @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28
+iG @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:77
+ij @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:77
+iz @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:77
+dP @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:89
+dM @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:89
+dk @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:89
+dG @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:89
+(anonymous) @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:89
+SR @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:89
+iR @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:77
+d$ @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:89
+lO @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:77
+lN @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:77
+lv @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:77
+i @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 🔐 Starte Login-Vorgang...
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 ✅ Supabase Auth erfolgreich
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28    Session vorhanden: true
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28    Access Token vorhanden: true
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28    Access Token (erste 30 Zeichen): eyJhbGciOiJFUzI1NiIsImtpZCI6Ij...
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 ✅ User und Token im State gesetzt
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 [vite] connecting...
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 [vite] connected.
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 🔍 Überprüfe Session beim App-Start...
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Session gefunden: true
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Session Error: null
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 ✅ Session wiederhergestellt - Token vorhanden
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28    User ID: 3a30c3b4-6cf7-482b-86b9-bb8b84894c1f
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28    Token Länge: 814
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 [vite] connecting...
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 [vite] connected.
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 === DEBUG AUTH TEST ===
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Access Token vorhanden: true
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Access Token (erste 30): eyJhbGciOiJFUzI1NiIsImtpZCI6Ij...
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Token Länge: 814
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Decoded JWT: {iss: 'https://xqjzlyownkjqekxfrizw.supabase.co/auth/v1', sub: '3a30c3b4-6cf7-482b-86b9-bb8b84894c1f', aud: 'authenticated', exp: 1772630600, iat: 1772627000, …}
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Current session: {data: {…}, error: null}
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Test-Antwort: {code: 401, message: 'Invalid JWT'}
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 🔍 Überprüfe Session beim App-Start...
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Session gefunden: true
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Session Error: null
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 ✅ Session wiederhergestellt - Token vorhanden
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28    User ID: 3a30c3b4-6cf7-482b-86b9-bb8b84894c1f
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28    Token Länge: 814
+Islamic-Quiz-App?p=f&t=xQwEsd2yLdMltnHi-0&preview-route=%2Fpayment:531 Running frontend commit 43c1b3f3f6656c516bec82d03d20612950373562
+vendor-core-ade2edecaf4781c7.min.js.br:54 Statsig is not ready to log exposures, will retry in 1 seconds
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:54
+(anonymous) @ 4016-48895b43bcb5d5a8.min.js.br:1101
+u @ vendor-core-ade2edecaf4781c7.min.js.br:54
+setTimeout
+(anonymous) @ vendor-core-ade2edecaf4781c7.min.js.br:63
+logExposureForFeatureGateCheck @ 4016-48895b43bcb5d5a8.min.js.br:1101
+getFeatureGateFromInitialOptions @ 4016-48895b43bcb5d5a8.min.js.br:1101
+getFeatureGate @ 4016-48895b43bcb5d5a8.min.js.br:1101
+getFeatureGate @ 4016-48895b43bcb5d5a8.min.js.br:1431
+932235 @ figma_app-1d6ad1ca44adbcaa.min.js.br:418
+i @ runtime~figma_app-186e2814fa041e8b.min.js.br:3
+801936 @ figma_app-1d6ad1ca44adbcaa.min.js.br:39
+i @ runtime~figma_app-186e2814fa041e8b.min.js.br:3
+781295 @ figma_app-1d6ad1ca44adbcaa.min.js.br:416
+i @ runtime~figma_app-186e2814fa041e8b.min.js.br:3
+593464 @ figma_app-1d6ad1ca44adbcaa.min.js.br:4
+i @ runtime~figma_app-186e2814fa041e8b.min.js.br:3
+816199 @ 4016-48895b43bcb5d5a8.min.js.br:85
+i @ runtime~figma_app-186e2814fa041e8b.min.js.br:3
+881625 @ figma_app-1d6ad1ca44adbcaa.min.js.br:529
+i @ runtime~figma_app-186e2814fa041e8b.min.js.br:3
+28285 @ 6066-c4088d3e95ad7af5.min.js.br:3
+i @ runtime~figma_app-186e2814fa041e8b.min.js.br:3
+344653 @ figma_app-1d6ad1ca44adbcaa.min.js.br:418
+i @ runtime~figma_app-186e2814fa041e8b.min.js.br:3
+912563 @ figma_app-1d6ad1ca44adbcaa.min.js.br:418
+i @ runtime~figma_app-186e2814fa041e8b.min.js.br:3
+941181 @ figma_app-1d6ad1ca44adbcaa.min.js.br:4
+i @ runtime~figma_app-186e2814fa041e8b.min.js.br:3
+577246 @ 5340-37939770a92d139c.min.js.br:3
+i @ runtime~figma_app-186e2814fa041e8b.min.js.br:3
+483051 @ 8222-0204520dc0536e7f.min.js.br:3
+i @ runtime~figma_app-186e2814fa041e8b.min.js.br:3
+948757 @ figma_app-1d6ad1ca44adbcaa.min.js.br:4
+i @ runtime~figma_app-186e2814fa041e8b.min.js.br:3
+(anonymous) @ figma_app-1d6ad1ca44adbcaa.min.js.br:698
+(anonymous) @ runtime~figma_app-186e2814fa041e8b.min.js.br:3
+(anonymous) @ figma_app-1d6ad1ca44adbcaa.min.js.br:698
+r @ runtime~figma_app-186e2814fa041e8b.min.js.br:3
+(anonymous) @ figma_app-1d6ad1ca44adbcaa.min.js.br:3
+vendor-core-ade2edecaf4781c7.min.js.br:54 Loaded 32 scripts (5968025b), 32 from cache (5968025b)
+vendor-core-ade2edecaf4781c7.min.js.br:54 [Livegraph] Connected 2026-03-04T12:26:04.045Z.
+vendor-core-ade2edecaf4781c7.min.js.br:54 [import] git: c8e6c45695ccb395f2b769e2855fd4887dfbe427, stamp: 9DB4DCBB85B872DD
+vendor-core-ade2edecaf4781c7.min.js.br:54 Autosave Changes not available or already claimed by another tab undefined
+vendor-core-ade2edecaf4781c7.min.js.br:54 [Fullscreen] Booting... (emscripten version 4.0.21)
+vendor-core-ade2edecaf4781c7.min.js.br:54 [GPU] graphicsAPI:"WebGPU", vendor:"Google Inc. (Apple)" renderer:"ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)" deviceArchitecture:"metal-3" deviceDescription:"" webGPUDevice:"" webGPUVendor:"apple" bindings:"emdawnwebgpu"
+vendor-core-ade2edecaf4781c7.min.js.br:54 [Fullscreen] Ready in 429.2ms
+vendor-core-ade2edecaf4781c7.min.js.br:54 [FullscreenApp] calling setEditorTheme and setting preference light
+vendor-core-ade2edecaf4781c7.min.js.br:54 [MultiplayerSession] connecting to wss://www.figma.com/api/multiplayer/WfR0NQohgjwTXVD67KAhrx?role=editor&tracking_session_id=JnWhUL2UQoT6GM0e&version=151&recentReload=0&file-load-streaming-compression&user-id=1610951669165160900&client_release=43c1b3f3f6656c516bec82d03d20612950373562
+vendor-core-ade2edecaf4781c7.min.js.br:54 [MultiplayerSession] Joining file version 106 (initial load)
+vendor-core-ade2edecaf4781c7.min.js.br:54 [FullscreenApp] calling setEditorTheme and setting preference light
+vendor-core-ade2edecaf4781c7.min.js.br:54 [Fullscreen] loadtime=3.68s maxmem=16012424
+vendor-core-ade2edecaf4781c7.min.js.br:54 [devtools] Initialized LS
+vendor-core-ade2edecaf4781c7.min.js.br:54 [devtools] Initialized LS
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 [vite] connecting...
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 [vite] connected.
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 🔍 Überprüfe Session beim App-Start...
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Session gefunden: false
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Session Error: null
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 ❌ Keine Session gefunden - User bleibt null
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 ❌ Kein Access Token vorhanden - Weiterleitung zu Login
+(anonymous) @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28
+r @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:69
+error @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28
+handlePayment @ PaymentPage.tsx:29
+y @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:77
+i @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28
+iG @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:77
+ij @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:77
+iz @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:77
+dP @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:89
+dM @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:89
+dk @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:89
+dG @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:89
+(anonymous) @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:89
+SR @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:89
+iR @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:77
+d$ @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:89
+lO @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:77
+lN @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:77
+lv @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:77
+i @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 🔐 Starte Login-Vorgang...
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 ✅ Supabase Auth erfolgreich
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28    Session vorhanden: true
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28    Access Token vorhanden: true
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28    Access Token (erste 30 Zeichen): eyJhbGciOiJFUzI1NiIsImtpZCI6Ij...
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 ✅ User und Token im State gesetzt
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 === DEBUG AUTH TEST ===
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Access Token vorhanden: true
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Access Token (erste 30): eyJhbGciOiJFUzI1NiIsImtpZCI6Ij...
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Token Länge: 814
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Decoded JWT: {iss: 'https://xqjzlyownkjqekxfrizw.supabase.co/auth/v1', sub: '3a30c3b4-6cf7-482b-86b9-bb8b84894c1f', aud: 'authenticated', exp: 1772630810, iat: 1772627210, …}
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Current session: {data: {…}, error: null}
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Test-Antwort: {code: 401, message: 'Invalid JWT'}
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 [vite] connecting...
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 [vite] connected.
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 🔍 Überprüfe Session beim App-Start...
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Session gefunden: true
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Session Error: null
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 ✅ Session wiederhergestellt - Token vorhanden
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28    User ID: 3a30c3b4-6cf7-482b-86b9-bb8b84894c1f
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28    Token Länge: 814
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Public Debug: {timestamp: '2026-03-04T12:29:30.674Z', supabaseUrl: 'https://xqjzlyownkjqekxfrizw.supabase.co', hasAnonKey: true, anonKeyPreview: 'eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...', anonKeyLength: 208, …}
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 === DEBUG AUTH TEST ===
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Access Token vorhanden: true
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Access Token (erste 30): eyJhbGciOiJFUzI1NiIsImtpZCI6Ij...
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Token Länge: 814
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Decoded JWT: {iss: 'https://xqjzlyownkjqekxfrizw.supabase.co/auth/v1', sub: '3a30c3b4-6cf7-482b-86b9-bb8b84894c1f', aud: 'authenticated', exp: 1772630810, iat: 1772627210, …}
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Current session: {data: {…}, error: null}
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Test-Antwort: {code: 401, message: 'Invalid JWT'}
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 [vite] connecting...
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 [vite] connected.
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 🔍 Überprüfe Session beim App-Start...
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Session gefunden: true
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Session Error: null
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 ✅ Session wiederhergestellt - Token vorhanden
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28    User ID: 3a30c3b4-6cf7-482b-86b9-bb8b84894c1f
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28    Token Länge: 814
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 [vite] connecting...
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 [vite] connected.
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 🔍 Überprüfe Session beim App-Start...
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Session gefunden: true
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Session Error: null
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 ✅ Session wiederhergestellt - Token vorhanden
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28    User ID: 3a30c3b4-6cf7-482b-86b9-bb8b84894c1f
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28    Token Länge: 814
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 GoTrueClient@supabase.auth.token:1 (2.98.0) 2026-03-04T12:32:59.073Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.
+(anonymous) @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28
+r @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:69
+warn @ code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28
+_GoTrueClient @ @supabase_supabase-js.js?v=96903ae6:8823
+SupabaseAuthClient @ @supabase_supabase-js.js?v=96903ae6:11424
+_initSupabaseAuthClient @ @supabase_supabase-js.js?v=96903ae6:11594
+SupabaseClient @ @supabase_supabase-js.js?v=96903ae6:11471
+createClient @ @supabase_supabase-js.js?v=96903ae6:11631
+(anonymous) @ AuthContext.tsx:24
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 [vite] connecting...
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 [vite] invalidate /src/app/context/AuthContext.tsx: Could not Fast Refresh ("supabase" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 [vite] hot updated: /src/app/context/AuthContext.tsx
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 [vite] hot updated: /src/styles/index.css
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 12:32:58 PM [vite] (client) hmr update /src/app/context/AuthContext.tsx, /src/styles/index.css
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 [vite] connected.
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 [vite] hot updated: /src/styles/index.css
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 [vite] hot updated: /src/app/App.tsx
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 [vite] hot updated: /src/app/components/PaymentPage.tsx
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 [vite] hot updated: /src/app/components/QuizPage.tsx
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 [vite] hot updated: /src/app/components/LoginPage.tsx
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 [vite] hot updated: /src/app/components/SignupPage.tsx
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 [vite] hot updated: /src/app/components/Dashboard.tsx
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 [vite] hot updated: /src/app/components/DebugAuth.tsx
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 12:32:59 PM [vite] (client) hmr invalidate /src/app/context/AuthContext.tsx Could not Fast Refresh ("supabase" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 12:32:59 PM [vite] (client) hmr update /src/styles/index.css, /src/app/App.tsx, /src/app/components/PaymentPage.tsx, /src/app/components/QuizPage.tsx, /src/app/components/LoginPage.tsx, /src/app/components/SignupPage.tsx, /src/app/components/Dashboard.tsx, /src/app/components/DebugAuth.tsx
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 🔄 AuthContext User State Update:
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28    User: null
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28    AccessToken in user: null
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28    AccessToken wird exportiert als: null
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 🔍 Überprüfe Session beim App-Start...
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Session gefunden: true
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Session Error: null
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 ✅ Session wiederhergestellt - Token vorhanden
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28    User ID: 3a30c3b4-6cf7-482b-86b9-bb8b84894c1f
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28    Token Länge: 814
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 🔄 AuthContext User State Update:
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28    User: test@test.de (ID: 3a30c3b4-6cf7-482b-86b9-bb8b84894c1f)
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28    AccessToken in user: eyJhbGciOiJFUzI1NiIsImtpZCI6Ij...
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28    AccessToken wird exportiert als: eyJhbGciOiJFUzI1NiIsImtpZCI6IjU0YzczMTY1LTU0ODUtNDk5Yi1hNjZiLTMzYmM1YzA1OGZkOSIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL3hxanpseW93bmtqcWVreGZyaXp3LnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiIzYTMwYzNiNC02Y2Y3LTQ4MmItODZiOS1iYjhiODQ4OTRjMWYiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzcyNjMwODEwLCJpYXQiOjE3NzI2MjcyMTAsImVtYWlsIjoidGVzdEB0ZXN0LmRlIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IlRlc3QgVXNlciJ9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6InBhc3N3b3JkIiwidGltZXN0YW1wIjoxNzcyNjI3MjEwfV0sInNlc3Npb25faWQiOiIxOTFmODBkMy0xZjljLTQ3ZTgtOTFmNi1iZGQxYmM3ZjRmMjgiLCJpc19hbm9ueW1vdXMiOmZhbHNlfQ.qcYeOFzLWp_209AzKP0EwzeiYKzWkOL3PAqyU3lGbnF7damzn3jUbCfqXnK8I5ZGndKHnKlF4ry7sKwdMGr63g
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 🔄 AuthContext User State Update:
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28    User: null
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28    AccessToken in user: null
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28    AccessToken wird exportiert als: null
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 🔍 Überprüfe Session beim App-Start...
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Session gefunden: true
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 Session Error: null
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 ✅ Session wiederhergestellt - Token vorhanden
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28    User ID: 3a30c3b4-6cf7-482b-86b9-bb8b84894c1f
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28    Token Länge: 814
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28 🔄 AuthContext User State Update:
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28    User: test@test.de (ID: 3a30c3b4-6cf7-482b-86b9-bb8b84894c1f)
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28    AccessToken in user: eyJhbGciOiJFUzI1NiIsImtpZCI6Ij...
+code_components_preview_iframe-7e022e10d2e5050f.min.js.br:28    AccessToken wird exportiert als: eyJhbGciOiJFUzI1NiIsImtpZCI6IjU0YzczMTY1LTU0ODUtNDk5Yi1hNjZiLTMzYmM1YzA1OGZkOSIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL3hxanpseW93bmtqcWVreGZyaXp3LnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiIzYTMwYzNiNC02Y2Y3LTQ4MmItODZiOS1iYjhiODQ4OTRjMWYiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzcyNjMwODEwLCJpYXQiOjE3NzI2MjcyMTAsImVtYWlsIjoidGVzdEB0ZXN0LmRlIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IlRlc3QgVXNlciJ9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6InBhc3N3b3JkIiwidGltZXN0YW1wIjoxNzcyNjI3MjEwfV0sInNlc3Npb25faWQiOiIxOTFmODBkMy0xZjljLTQ3ZTgtOTFmNi1iZGQxYmM3ZjRmMjgiLCJpc19hbm9ueW1vdXMiOmZhbHNlfQ.qcYeOFzLWp_209AzKP0EwzeiYKzWkOL3PAqyU3lGbnF7damzn3jUbCfqXnK8I5ZGndKHnKlF4ry7sKwdMGr63g
