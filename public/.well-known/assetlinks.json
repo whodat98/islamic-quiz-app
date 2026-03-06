@@ -1,10 +1,8 @@
 [{
-  "relation": ["delegate_permission/common.handle_all_urls"],
-  "target": {
-    "namespace": "android_app",
-    "package_name": "com.ayoubbezoui.islamicquiz",
-    "sha256_cert_fingerprints": [
-      "REPLACE_WITH_YOUR_SHA256_FINGERPRINT"
-    ]
-  }
-}]
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "com.islamicquiz.app",
+        "sha256_cert_fingerprints": ["B6:C2:4D:8D:AC:54:39:03:BA:15:18:77:B2:7F:E1:96:46:1D:BA:82:91:2A:A6:20:7D:1F:F7:E2:20:10:6D:EF"]
+      }
+    }]
