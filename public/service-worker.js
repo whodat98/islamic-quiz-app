@@ -1,16 +1,16 @@
 // WICHTIG: Version erhöhen bei jeder Änderung, um Cache zu clearen!
-const CACHE_NAME = 'islamic-quiz-v3'; // <-- VERSION 3: Alle Fragen freigeschaltet!
+const CACHE_NAME = 'islamic-quiz-v4'; // <-- VERSION 4: Fixed Build!
 const urlsToCache = [
   '/',
   '/index.html',
   '/manifest.json',
-  '/icon-192x192.png',
-  '/icon-512x512.png'
+  '/icon.svg',
+  '/favicon.svg'
 ];
 
 // Install Service Worker - Sofort aktivieren!
 self.addEventListener('install', (event) => {
-  console.log('[Service Worker] Installing v3 - Alle Fragen freigeschaltet! SKIP WAITING...');
+  console.log('[Service Worker] Installing v4 - Fixed Build! SKIP WAITING...');
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then((cache) => {
@@ -27,7 +27,7 @@ self.addEventListener('install', (event) => {
 
 // Activate Service Worker - Alte Caches löschen!
 self.addEventListener('activate', (event) => {
-  console.log('[Service Worker] Activating v3 - DELETING old caches...');
+  console.log('[Service Worker] Activating v4 - DELETING old caches...');
   event.waitUntil(
     caches.keys().then((cacheNames) => {
       return Promise.all(
@@ -44,8 +44,7 @@ self.addEventListener('activate', (event) => {
   self.clients.claim();
 });
 
-// Fetch Strategy: NETWORK FIRST für .js/.tsx/.ts Dateien (immer aktuell!)
-// Cache only für Bilder und statische Assets
+// Fetch Strategy: NETWORK FIRST für alles außer Bilder
 self.addEventListener('fetch', (event) => {
   // Skip cross-origin requests
   if (!event.request.url.startsWith(self.location.origin)) {
@@ -60,8 +59,8 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Für JavaScript/TypeScript: IMMER Network First, dann Cache
-  if (url.pathname.endsWith('.js') || url.pathname.endsWith('.tsx') || url.pathname.endsWith('.ts')) {
+  // Für JavaScript: IMMER Network First
+  if (url.pathname.endsWith('.js') || url.pathname.includes('/assets/')) {
     event.respondWith(
       fetch(event.request)
         .then((response) => {
