@@ -13,6 +13,7 @@ import { getLocalizedCategoryName } from '../data/questionsHelper';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { ProfileSwitcher } from './ProfileSwitcher';
 import { DuellMenu } from './DuellMenu';
+import { AdBanner } from './AdBanner';
 import { projectId } from '/utils/supabase/info';
 import { BookOpen, Trophy, Clock, TrendingUp, LogOut, Info } from 'lucide-react';
 
@@ -25,7 +26,7 @@ interface UserProgress {
 export function Dashboard() {
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
-  const { user, accessToken, checkPaymentStatus, signOut } = useAuth();
+  const { user, accessToken, signOut } = useAuth();
   const { language } = useLanguage();
   const { currentProfile } = useProfile();
   const t = useTranslation(language);
@@ -33,7 +34,6 @@ export function Dashboard() {
   const [loading, setLoading] = useState(true);
   const [debugInfo, setDebugInfo] = useState<string[]>([]);
   const [error, setError] = useState<string>('');
-  const [hasPaid, setHasPaid] = useState(false);
 
   // Redirect zur Profil-Auswahl, wenn kein Profil ausgewählt ist
   useEffect(() => {
@@ -56,8 +56,6 @@ export function Dashboard() {
     
     // Optional: Wenn User eingeloggt ist, lade seine Daten
     if (accessToken) {
-      const paid = await checkPaymentStatus();
-      setHasPaid(paid);
       await loadProgress();
     } else {
       // KEIN Login - lade Fortschritt aus localStorage (profil-spezifisch!)
@@ -105,143 +103,6 @@ export function Dashboard() {
         console.log(logs.join('\n'));
         return; // Einfach returnen, KEIN navigate('/login')!
       }
-
-      // Check if user just came back from successful Stripe payment
-      const paymentParam = searchParams.get('payment');
-      const paymentSuccess = paymentParam === 'success';
-
-      logs.push(`URL Param 'payment' (from searchParams): ${paymentParam}`);
-      logs.push(`Payment success in URL: ${paymentSuccess}`);
-
-      let paymentConfirmed = false;
-
-      // Check for pending payment flag (more reliable than URL params)
-      logs.push('Checking for pending payment flag...');
-      console.log('🔍 Checking for pending payment flag on server...');
-      
-      try {
-        const checkPendingUrl = `https://${projectId}.supabase.co/functions/v1/make-server-87b5103a/check-pending-payment`;
-        logs.push(`Calling: ${checkPendingUrl}`);
-        
-        const pendingResponse = await fetch(checkPendingUrl, {
-          method: 'GET',
-          headers: {
-            'Authorization': `Bearer ${accessToken}`,
-          },
-        });
-
-        if (pendingResponse.ok) {
-          const pendingData = await pendingResponse.json();
-          logs.push(`Pending payment check: ${JSON.stringify(pendingData)}`);
-          console.log('📦 Pending payment response:', pendingData);
-
-          if (pendingData.hasPendingPayment) {
-            logs.push('🎉 PENDING PAYMENT FLAG FOUND - User just returned from Stripe!');
-            console.log('🎉 PENDING PAYMENT FLAG FOUND - Confirming payment...');
-            
-            // Confirm payment on server
-            try {
-              const confirmUrl = `https://${projectId}.supabase.co/functions/v1/make-server-87b5103a/confirm-payment`;
-              logs.push(`Calling: ${confirmUrl}`);
-              console.log('📞 Calling confirm-payment endpoint:', confirmUrl);
-              
-              const confirmResponse = await fetch(confirmUrl, {
-                method: 'POST',
-                headers: {
-                  'Authorization': `Bearer ${accessToken}`,
-                },
-              });
-
-              logs.push(`Response status: ${confirmResponse.status}`);
-              console.log('📬 Confirm payment response status:', confirmResponse.status);
-
-              const confirmData = await confirmResponse.json();
-              logs.push(`Response data: ${JSON.stringify(confirmData)}`);
-              console.log('📬 Confirm payment response:', confirmData);
-
-              if (confirmResponse.ok && confirmData.hasPaid) {
-                logs.push('✅ Payment confirmed successfully via pending flag!');
-                console.log('✅✅✅ Payment confirmed successfully via pending flag!');
-                paymentConfirmed = true;
-                // Remove payment=success from URL if present
-                if (paymentParam) {
-                  searchParams.delete('payment');
-                  setSearchParams(searchParams);
-                }
-              } else {
-                logs.push(`❌ Payment confirmation failed: ${JSON.stringify(confirmData)}`);
-                console.error('❌ Payment confirmation failed:', confirmData);
-              }
-            } catch (error: any) {
-              logs.push(`❌ Exception in confirm-payment: ${error.message}`);
-              console.error('❌ Error confirming payment:', error);
-            }
-          }
-        }
-      } catch (error: any) {
-        logs.push(`Exception checking pending payment: ${error.message}`);
-        console.error('Error checking pending payment:', error);
-      }
-
-      // Fallback: also check URL parameter (legacy support)
-      if (!paymentConfirmed && paymentSuccess) {
-        logs.push('🎉 Payment success detected in URL (legacy) - confirming payment with server...');
-        console.log('🎉 Payment success detected in URL - confirming payment with server...');
-        
-        // Confirm payment on server (fallback for test mode where webhooks don't work)
-        try {
-          const confirmUrl = `https://${projectId}.supabase.co/functions/v1/make-server-87b5103a/confirm-payment`;
-          logs.push(`Calling: ${confirmUrl}`);
-          console.log('📞 Calling confirm-payment endpoint:', confirmUrl);
-          
-          const confirmResponse = await fetch(confirmUrl, {
-            method: 'POST',
-            headers: {
-              'Authorization': `Bearer ${accessToken}`,
-            },
-          });
-
-          logs.push(`Response status: ${confirmResponse.status}`);
-          console.log('📬 Confirm payment response status:', confirmResponse.status);
-
-          const confirmData = await confirmResponse.json();
-          logs.push(`Response data: ${JSON.stringify(confirmData)}`);
-          console.log('📬 Confirm payment response:', confirmData);
-
-          if (confirmResponse.ok && confirmData.hasPaid) {
-            logs.push('✅ Payment confirmed successfully!');
-            console.log('✅✅✅ Payment confirmed successfully!');
-            paymentConfirmed = true;
-            // Remove payment=success from URL
-            searchParams.delete('payment');
-            setSearchParams(searchParams);
-          } else {
-            logs.push(`❌ Payment confirmation failed: ${JSON.stringify(confirmData)}`);
-            console.error('❌ Payment confirmation failed:', confirmData);
-          }
-        } catch (error: any) {
-          logs.push(`❌ Exception in confirm-payment: ${error.message}`);
-          console.error('❌ Error confirming payment:', error);
-        }
-      }
-
-      // Check payment status
-      logs.push('Checking payment status...');
-      console.log('💳 Checking payment status...');
-      const paid = await checkPaymentStatus();
-      logs.push(`Has paid: ${paid}`);
-      console.log(`💳 Payment status result: ${paid}`);
-      setHasPaid(paid);
-
-      // WICHTIG: Alle User bekommen Zugriff auf Dashboard (auch ohne Zahlung für 50 kostenlose Fragen)
-      // if (!paid) {
-      //   logs.push('❌ User has not paid - redirecting to /payment');
-      //   setDebugInfo(logs);
-      //   console.log(logs.join('\n'));
-      //   console.log(' Redirecting to /payment because hasPaid=false');
-      //   navigate('/payment');
-      //   return;
-      // }
 
       logs.push('✅ Loading progress from server...');
       console.log('✅ Loading progress from server...');
@@ -342,35 +203,6 @@ export function Dashboard() {
     }
   };
 
-  const handlePaymentConfirmed = async () => {
-    console.log('💎 Payment confirmed via Force Payment - updating UI...');
-    
-    // Update hasPaid state immediately
-    setHasPaid(true);
-    
-    // Reload user data from server
-    if (!accessToken) return;
-    
-    try {
-      const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-87b5103a/progress`,
-        {
-          headers: {
-            'Authorization': `Bearer ${accessToken}`,
-          },
-        }
-      );
-
-      if (response.ok) {
-        const data = await response.json();
-        setUserData(data.progress);
-        console.log('✅ User data reloaded after payment confirmation');
-      }
-    } catch (error) {
-      console.error('Error reloading user data:', error);
-    }
-  };
-
   const handleSignOut = async () => {
     await signOut();
     navigate('/login');
@@ -425,7 +257,7 @@ export function Dashboard() {
   }
 
   // ALLE 300 FRAGEN SIND JETZT KOSTENLOS FREIGESCHALTET!
-  const totalQuestions = 300; // Früher: hasPaid ? 300 : 50
+  const totalQuestions = 300; // 🔥 100% KOSTENLOS - Werbung finanziert die App
   const completedQuestions = Object.keys(userData.answeredQuestions || {}).length;
   const progressPercentage = (completedQuestions / totalQuestions) * 100;
   
@@ -606,39 +438,29 @@ export function Dashboard() {
           <div>
             <h2 className="text-2xl font-bold mb-4 text-gray-800">Starte jetzt!</h2>
             
-            {/* 🎉 ALLE FRAGEN FREIGESCHALTET! */}
+            {/* 🆓 100% KOSTENLOS - Werbung finanziert */}
             <Card className="p-6 mb-4 bg-gradient-to-br from-emerald-50 to-teal-50 border-2 border-emerald-300">
-              <h3 className="font-bold text-lg mb-2 text-emerald-800">🎉 Alle Fragen freigeschaltet!</h3>
+              <h3 className="font-bold text-lg mb-2 text-emerald-800">🎉 100% Kostenlos!</h3>
               <p className="text-sm text-gray-700 mb-2">
-                Du hast Zugriff auf <strong>alle 300 Fragen</strong> in 6 Kategorien!
+                Du hast Zugriff auf <strong>alle 300 Fragen</strong> in 6 Kategorien - komplett gratis!
               </p>
               <p className="text-xs text-gray-600">
-                Teste dein Wissen und verbessere dein Verständnis des Islam.
+                🙏 Diese App wird durch Werbung finanziert. Vielen Dank für deine Unterstützung!
               </p>
             </Card>
 
-            {hasPaid && (
-              <Card className="p-6 mb-4">
-                <h3 className="font-bold text-lg mb-3 text-gray-800">✅ Premium Zugang aktiviert</h3>
-                <p className="text-sm text-gray-600 mb-4">
-                  Du hast vollen Zugriff auf alle 300 Fragen in 6 Kategorien. Dein Fortschritt wird automatisch gespeichert.
-                </p>
-                <div className="space-y-2 text-sm">
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-emerald-600 rounded-full"></div>
-                    <span>Alle Kategorien freigeschaltet</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-emerald-600 rounded-full"></div>
-                    <span>Unbegrenzter Zugriff</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-emerald-600 rounded-full"></div>
-                    <span>Detaillierte Erklärungen</span>
-                  </div>
-                </div>
-              </Card>
-            )}
+            {/* 📢 AD BANNER - DIREKT INLINE OHNE COMPONENT */}
+            <div className="mb-4 border-4 border-dashed border-emerald-500 bg-gradient-to-r from-emerald-100 to-teal-100 rounded-xl p-8 text-center shadow-lg">
+              <div className="text-3xl font-bold text-emerald-700 mb-3">
+                📢 WERBEBEREICH
+              </div>
+              <div className="text-lg text-gray-700 font-semibold mb-2">
+                🆓 100% GRATIS APP • WERBUNG ERMÖGLICHT KOSTENLOSE NUTZUNG
+              </div>
+              <div className="text-sm text-gray-600 mt-3 bg-white/50 rounded p-3 inline-block">
+                ℹ️ Echte Google AdMob Ads erscheinen nach Vercel-Deploy
+              </div>
+            </div>
 
             {/* Schnellstart */}
             <Card className="p-6 bg-gradient-to-br from-emerald-500 to-teal-600 text-white">
