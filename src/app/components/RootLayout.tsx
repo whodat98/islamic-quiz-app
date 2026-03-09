@@ -13,11 +13,15 @@ export function RootLayout() {
   // Profile check for ALL protected routes
   // Public routes (/privacy, /about) are now OUTSIDE this layout
   useEffect(() => {
+    console.log('🔍 RootLayout - Current path:', location.pathname);
+    console.log('🔍 RootLayout - Current profile:', currentProfile?.name);
+    
     // Allow /login, /signup, /profiles without redirect
     const publicPaths = ['/login', '/signup', '/profiles'];
     const isPublicPath = publicPaths.some(path => location.pathname.startsWith(path));
     
     if (!isPublicPath && !currentProfile) {
+      console.log('⚠️ No profile - redirecting to /profiles');
       navigate('/profiles');
     }
   }, [currentProfile, location.pathname, navigate]);
@@ -30,5 +34,4 @@ export function RootLayout() {
       <NotificationPermission />
     </>
   );
-}
 }
