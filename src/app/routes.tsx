@@ -13,21 +13,33 @@ import { DuellWaitingRoom } from './components/DuellWaitingRoom';
 import { DuellPlayPage } from './components/DuellPlayPage';
 import { DuellResultPage } from './components/DuellResultPage';
 import { AboutPage } from './components/AboutPage';
+import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
 
+// Router configuration for ImanIQ Quiz App
+// PUBLIC PAGES ARE COMPLETELY SEPARATE - NO ROOTLAYOUT!
 export const router = createBrowserRouter([
+  // PUBLIC ROUTES - No RootLayout, no profile check!
+  {
+    path: '/privacy',
+    element: <PrivacyPolicyPage />,
+  },
+  {
+    path: '/about',
+    element: <AboutPage />,
+  },
+  // PROTECTED ROUTES - With RootLayout and profile check
   {
     path: '/',
     element: <RootLayout />,
     children: [
       { index: true, element: <Dashboard /> },
-      { path: 'profiles', element: <ProfileSelection /> },
       { path: 'login', element: <LoginPage /> },
       { path: 'signup', element: <SignupPage /> },
+      { path: 'profiles', element: <ProfileSelection /> },
       { path: 'dashboard', element: <Dashboard /> },
       { path: 'quiz/:category', element: <QuizPage /> },
       { path: 'results', element: <ResultsPage /> },
       { path: 'payment', element: <PaymentPage /> },
-      { path: 'about', element: <AboutPage /> },
       { path: 'duell/:duellId/waiting', element: <DuellWaitingRoom /> },
       { path: 'duell/:duellId/play', element: <DuellPlayPage /> },
       { path: 'duell/:duellId/result', element: <DuellResultPage /> },
